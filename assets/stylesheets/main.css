@@ -1,18 +1,37 @@
+:root {
+  --div-width: 65%;
+  --div-background-color: rgba(0,0,0,0.4);
+  --font-weight:100;
+  --h1-font-size: 40px;
+  --h1-letter-spacing: 4px;
+  --h5-font-size: 20px;
+  --h5-letter-sapcing: 3px;
+  --border-radius: 8px;
+  --font-family: 'Violet Sans',sans-serif;
+  --border:2px solid black;
+}
+
+@font-face {
+    
+}
+
 body{
   margin: 0;
   padding: 0;
-  background: url(bg.jpg) no-repeat;
   background-size: cover;
 }
 .box{
-  width: 450px;
-  background: rgba(0, 0, 0, 0.4);
+  width: var(--div-width);
+  background: var(--div-background-color);
   padding: 40px;
   text-align: center;
   margin: auto;
-  margin-top: 5%;
   color: white;
-  font-family: 'Century Gothic',sans-serif;
+  font-family: var(--font-family);
+  border-radius: var(--border-radius);
+  border-color: black;
+  border-style: solid;
+  border-width: 2px 6px 6px 2px;
 }
 .box-img{
   border-radius: 50%;
@@ -20,14 +39,14 @@ body{
   height: 200px;
 }
 .box h1{
-  font-size: 40px;
-  letter-spacing: 4px;
-  font-weight: 100;
+  font-size: var(--h1-font-size);
+  letter-spacing: var(--h1-letter-spacing);
+  font-weight: var(--font-weight);
 }
 .box h5{
-  font-size: 20px;
-  letter-spacing: 3px;
-  font-weight: 100;
+  font-size: var(--h5-font-size);
+  letter-spacing: var(--h5-letter-sapcing);
+  font-weight: var(--font-weight);
 }
 .box p{
   text-align: justify;
@@ -50,4 +69,46 @@ ul{
 .box li a:hover{
   color: #b9b9b9;
 }
-
+.nav-buttons{
+  width: var(--div-width);
+  padding: 40px;
+  text-align: center;
+  margin: auto;
+  margin-top: 5%;
+  font-family: var(--font-family);
+}
+.nav-buttons button {
+  background-color: white;
+  border: var(--border);
+  padding: 20px 50px;
+  /*font-weight: bold;*/
+  font-size:30px;
+  position:relative;
+  color:black;
+  border-radius: var(--border-radius);
+  font-family: var(--font-family);
+  letter-spacing: var(--h1-letter-spacing);
+  font-weight: var(--font-weight);
+}
+.nav-buttons button:after{
+  content:'';
+  position:absolute;
+  background-color:black;
+  top:1px;
+  left:1px;
+  right:-5px;
+  bottom:-5px;
+  color:black;
+  border-radius: var(--border-radius);
+  z-index:-1;
+}
+.nav-buttons button:hover, nav-buttons button:active{
+  color:white;
+  background-color:black;
+  transition: all 0.7s ease;
+}
+.nav-buttons button:hover:after,nav-buttons button:hover:active{
+  background-color:black;
+  border:2px solid black;
+  transition: all 0,7s ease;
+}

@@ -22,7 +22,7 @@ func main() {
 
 func serveTemplate(w http.ResponseWriter, r *http.Request) {
     baseLayout := filepath.Join("templates", "layout.html")
-    pageBody := filepath.Join("templates", filepath.Clean(r.URL.Path))
+    pageBody := filepath.Join("templates", filepath.Clean(r.URL.Path) + ".html")
 
     tmpl, err := template.New("").ParseFiles(baseLayout, pageBody)
     if err != nil {
