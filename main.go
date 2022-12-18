@@ -24,6 +24,9 @@ func serveTemplate(w http.ResponseWriter, r *http.Request) {
     baseLayout := filepath.Join("templates", "layout.html")
     pageBody := filepath.Join("templates", filepath.Clean(r.URL.Path))
 
-    tmpl, _ := template.New("").ParseFiles(baseLayout, pageBody)
+    tmpl, err := template.New("").ParseFiles(baseLayout, pageBody)
+    if err != nil {
+        log.Print(err)
+    }
     tmpl.ExecuteTemplate(w ,"layout", nil)
 }
